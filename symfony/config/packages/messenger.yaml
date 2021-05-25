@@ -1,0 +1,28 @@
+framework:
+    messenger:
+        # Uncomment this (and the failed transport below) to send failed messages to this transport for later handling.
+        # failure_transport: failed
+
+        transports:
+            # https://symfony.com/doc/current/messenger.html#transport-configuration
+            async_email: '%env(RABBITMQ_DSN)%'
+            # failed: 'doctrine://default?queue_name=failed'
+            # sync: 'sync://'
+            async_whatsapp: '%env(RABBITMQ_DSN)%'
+            
+            async_sms: '%env(RABBITMQ_DSN)%'
+
+            async_receiver_controller: '%env(RABBITMQ_DSN)%'
+
+            async_default: '%env(RABBITMQ_DSN)%'
+
+
+        routing:
+            # Route your messages to the transports
+#             'App\Controller\EmailMessage\EmailMessage': async_email
+#             'App\Controller\WhatsappMessage\WhatsappMessage': async_whatsapp
+#             'App\Controller\SMSMessage\SMSMessage': async_sms
+
+
+             'App\Controller\DefaultController': async_default
+             'App\Controller\ReceiverController': async_receiver_controller
