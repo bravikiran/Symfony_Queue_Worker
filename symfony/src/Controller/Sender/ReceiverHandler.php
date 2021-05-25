@@ -9,7 +9,7 @@ class ReceiverHandler implements MessageHandlerInterface
 
     public function __invoke(Receiver $receiver)
     {
-
+       
     }
 
 }

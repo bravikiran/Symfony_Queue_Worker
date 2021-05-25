@@ -24,7 +24,7 @@ class Receiver
 
 //        $data = $message->getData();
 //        $sender = $message->getSender();
-        $message->sendMessage();
+          $message->sendMessage();
 //        $sender->send($data);
     }
 

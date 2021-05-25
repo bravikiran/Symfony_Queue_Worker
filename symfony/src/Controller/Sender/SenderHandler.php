@@ -9,13 +9,9 @@ use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
 class SenderHandler implements MessageHandlerInterface
 {
-    /**
-     * @param Sender $sender
-     * @return Response
-     */
-    public function __invoke(Sender $sender): Response
+    public function __invoke(Sender $sender)
     {
-        return new Response('SenderHandlerInterface');
+
     }
 
 }

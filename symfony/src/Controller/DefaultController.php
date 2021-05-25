@@ -8,6 +8,7 @@ use App\Controller\SMSMessage\SMSMessage;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Messenger\MessageBusInterface;
+use Symfony\Component\Routing\Annotation\Route;
 
 
 class DefaultController extends AbstractController
@@ -18,6 +19,7 @@ class DefaultController extends AbstractController
      */
 
     public function index(MessageBusInterface $busInterface): Response
+
     {
          $busInterface->dispatch(new SMSMessage('Look! I created a SMS message!'));
 

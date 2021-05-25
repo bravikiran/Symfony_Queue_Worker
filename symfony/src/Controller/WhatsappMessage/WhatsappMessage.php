@@ -4,6 +4,7 @@ namespace App\Controller\WhatsappMessage;
 
 
 class WhatsappMessage {
+   
     private $id;
 
     private $msg;

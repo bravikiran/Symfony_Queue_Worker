@@ -9,5 +9,6 @@ class SMSMessageHandler implements MessageHandlerInterface
 {
     public function __invoke(SMSMessage $message)
     {
+        
     }
 }

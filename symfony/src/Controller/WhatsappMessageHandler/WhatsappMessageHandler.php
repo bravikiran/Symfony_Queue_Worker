@@ -9,11 +9,9 @@ use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
 class WhatsappMessageHandler implements MessageHandlerInterface {
 
-    protected $whatsappMessage;
-
 
     public function __invoke(WhatsappMessage $whatsappMessage)
     {
-        // ... do some work - like sending an Whatsapp message!
+        // sending an Whatsapp message!
     }
 }

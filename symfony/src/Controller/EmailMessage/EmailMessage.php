@@ -4,15 +4,15 @@ namespace App\Controller\EmailMessage;
 
 class EmailMessage
 {
-    private $userName;
+    private $content;
 
-    public function __construct(string $userName)
+    public function __construct(string $content)
     {
-        $this->userName = $userName;
+        $this->content = $content;
     }
 
-    public function getUserName(): string
+    public function getContent(): string
     {
-        return $this->userName;
+        return $this->content;
     }
 }
