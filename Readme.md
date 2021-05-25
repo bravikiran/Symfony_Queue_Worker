@@ -1,14 +1,13 @@
-# 🐳 Docker + PHP 7.4 + MySQL + Nginx + Symfony 5 Boilerplate
+# 🐳 Docker + PHP 7.4 + MySQL + Symfony 5 + Rabbitmq
 
 ## Description
 
 This is a complete stack for running Symfony 5 into Docker containers using docker-compose tool.
 
-It is composed by 3 containers:
+It is composed by 2 containers:
 
-- `nginx`, acting as the webserver.
 - `php`, the PHP-FPM container with the 7.4 PHPversion.
-- `db` which is the MySQL database container with a **MySQL 8.0** image.
+- `rabbitmq` which is the message broker container with a **rabbitmq 3.8** image.
 
 ## Installation
 
@@ -16,19 +15,47 @@ It is composed by 3 containers:
 
 2. Run `docker-compose up -d`
 
-3. The 3 containers are deployed: 
+3. The 2 containers are deployed: 
 
 ```
-Creating symfony-docker_db_1    ... done
 Creating symfony-docker_php_1   ... done
-Creating symfony-docker_nginx_1 ... done
+Creating symfony-docker_rabbitmq_1 ... done
 ```
 
-4. Use this value for the DATABASE_URL environment variable of Symfony:
+4. Use this value for the Symfony_URL environment variable of Symfony:
 
 ```
-DATABASE_URL=mysql://app_user:helloworld@db:3306/app_db?serverVersion=5.7
+localhost:8000
+```
+5. Use this value for the Rabbitmq_URL environment variable of RabbitMq:
+
+```
+localhost:15672
+```
+Username: guest and password: guest
+
+
+6. After docker compose up open another terminal and enter docker container with below cmd
+
+```
+docker exec -it symfony \bin\bash
+```
+7. Manual start of messenger to send message to the rabbitmq  
+```
+php bin/console messenger:consume async 
+```
+7.1 use -vv to see details what's happening 
+```
+php bin/console messenger:consume async -vv
+```
+8. Manual start and stop of messenger with flag
+
+```
+php bin/console messenger:consume async --time-limit=3600
 ```
 
-You could change the name, user and password of the database in the `env` file at the root of the project.
 
+
+
+
+ 
