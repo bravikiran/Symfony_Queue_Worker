@@ -23,4 +23,4 @@ framework:
 
 
 #              'App\Controller\DefaultController' : async_default
-              'App\Controller\ReceiverController' : async_receiver
+            'App\Controller\ReceiverController' : async_receiver
