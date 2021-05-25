@@ -1,4 +1,4 @@
-# 🐳 Docker + PHP 7.4 + MySQL + Symfony 5 + Rabbitmq
+# 🐳 Docker + PHP 7.4 + Symfony 5 + Rabbitmq
 
 ## Description
 
